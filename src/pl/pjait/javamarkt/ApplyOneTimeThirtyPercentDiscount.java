@@ -1,4 +1,4 @@
-package pl.pjait;
+package pl.pjait.javamarkt;
 
 public class ApplyOneTimeThirtyPercentDiscount implements ICanCalculateSpecialOffer {
     @Override

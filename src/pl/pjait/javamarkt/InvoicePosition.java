@@ -1,4 +1,4 @@
-package pl.pjait;
+package pl.pjait.javamarkt;
 
 public class InvoicePosition {
     public static final double TAX_5 = 0.05;

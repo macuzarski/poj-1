@@ -1,4 +1,4 @@
-package pl.pjait;
+package pl.pjait.javamarkt;
 
 public class Discount300Plus implements ICanCalculateSpecialOffer{
 

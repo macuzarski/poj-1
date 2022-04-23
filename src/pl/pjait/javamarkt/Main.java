@@ -1,4 +1,4 @@
-package pl.pjait;
+package pl.pjait.javamarkt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +30,12 @@ public class Main {
 
         printoutInvoice(invoice);
 
+        Seller bob = new Seller("Intel", "Palubickiego 518", "59959", "50 4032 0001 0000 4354");
+        bob.getAccountNumber();
+        invoice.setSeller(bob);
+        System.out.println(invoice.getTotalValue()
+        );
+//        System.out.println(invoice.getInvoiceNo());
 
 
     }
@@ -38,14 +44,15 @@ public class Main {
         System.out.println("|NAZWA\t|ILOSC\t|CENA NETTO\t|CENA BRUTTO\t|STAWKA VAT\t|PODATEK");
         System.out.println("***");
         for (InvoicePosition p : invoice.getPositions()) {
-            System.out.print("|"+p.getProduct().getName()+"\t\t|");
-            System.out.print(p.getProductCount()+"\t\t|");
-            System.out.print(p.getNettoPrice()+"\t\t|");
-            System.out.print(p.getGrossPrice()+"\t\t\t|");
-            System.out.print(p.getTax()+"\t\t|");
+            System.out.print("|" + p.getProduct().getName() + "\t\t|");
+            System.out.print(p.getProductCount() + "\t\t|");
+            System.out.print(p.getNettoPrice() + "\t\t|");
+            System.out.print(p.getGrossPrice() + "\t\t\t|");
+            System.out.print(p.getTax() + "\t\t|");
             System.out.println(p.getTaxValue());
             System.out.println("---");
         }
+
 
     }
 }

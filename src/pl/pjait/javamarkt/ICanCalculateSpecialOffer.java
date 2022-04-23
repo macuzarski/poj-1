@@ -1,4 +1,4 @@
-package pl.pjait;
+package pl.pjait.javamarkt;
 
 public interface ICanCalculateSpecialOffer {
     boolean canCalculate(Cart cart);

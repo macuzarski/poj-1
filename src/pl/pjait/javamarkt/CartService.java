@@ -1,4 +1,4 @@
-package pl.pjait;
+package pl.pjait.javamarkt;
 
 import java.util.ArrayList;
 import java.util.Comparator;
