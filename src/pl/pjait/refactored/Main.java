@@ -4,6 +4,7 @@ import pl.pjait.refactored.discounts.SetOfDiscounts;
 import pl.pjait.refactored.discounts.FreeCupDiscount;
 import pl.pjait.refactored.discounts.PercentDiscount;
 import pl.pjait.refactored.discounts.ThirdForFreeDiscount;
+import pl.pjait.refactored.filters.FilterBy;
 import pl.pjait.refactored.model.*;
 import pl.pjait.refactored.sorters.SortByOfferName;
 import pl.pjait.refactored.sorters.SortByProductionYear;
@@ -30,7 +31,7 @@ public class Main {
         Car c1 = new Car("Nissan", 34000.00, 2016, 170000);
         Car c2 = new Car("Honda", 44000.00, 2018, 222000);
         Car c3 = new Car("Toyota", 55000.00, 2011, 144000);
-        ProductOffer p1 = new ProductOffer(c1, "tanie autko", CurrentDate.asString());
+        ProductOffer p1 = new ProductOffer(c1, "tani autko", CurrentDate.asString());
         ProductOffer p2 = new ProductOffer(c2, "niemiec plakal", "2022-04-03");
         ProductOffer p3 = new ProductOffer(c3, "nie opel ale sprzedam", "2023-05-03");
         SortByOfferName priceSorter = new SortByOfferName();
@@ -45,6 +46,14 @@ public class Main {
         printOffers(motoOto);
         priceSorter.sort(motoOto, false);
         printOffers(motoOto);
+        ArrayList<ProductOffer> filtered = FilterBy.filterBy(motoOto, "2022-05-02", "2024-05-05");
+        printOffers(filtered);
+        filtered = FilterBy.filterBy(motoOto, "nie");
+        printOffers(filtered);
+        filtered = FilterBy.filterBy(motoOto, 30000.00, 50000.00);
+        printOffers(filtered);
+        filtered = FilterBy.filterByProduction(motoOto, 2017, 2025);
+        printOffers(filtered);
 
 
 
